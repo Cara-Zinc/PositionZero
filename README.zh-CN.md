@@ -2,7 +2,7 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-![Position Zero 概念海报，黑白教室里的棋盘与 PZ—0001 编号训练卡](design/position-zero-poster.webp)
+![Position Zero 黑白漫画海报，双扇窗旁的棋盘和 PZ—0001 编号训练卡](design/position-zero-poster.webp)
 
 POSITION ZERO 是一款面向 Apple Silicon Mac 的本地优先国际象棋局面训练工具。它可以把棋谱、FEN 和棋盘截图整理为编号研究局面，并提供 Stockfish 分析、可验证的规则化讲解和主动回忆训练卡。
 
