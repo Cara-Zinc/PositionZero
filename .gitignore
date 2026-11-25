@@ -1,0 +1,25 @@
+node_modules
+dist
+.DS_Store
+src-tauri/target
+src-tauri/gen
+public/models/*.onnx
+public/ort/*.wasm
+src-tauri/binaries/stockfish-aarch64-apple-darwin
+
+# Local data and optional background tracks
+.env
+.env.*
+!.env.example
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+/public/audio/*.mp3
+
+# Local copies of museum pages and reference photographs
+/design/Red and White chess set - Open Chess Museum.html
+/design/Red and White chess set - Open Chess Museum_files/
+/design/red-and-white-chess-set.htm
+/design/red-and-white-chess-set_files/

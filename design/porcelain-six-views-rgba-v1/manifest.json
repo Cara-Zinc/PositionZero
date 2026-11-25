@@ -1,0 +1,127 @@
+{
+  "generator": "built-in ImageGen",
+  "count": 12,
+  "validation": "All 12 decoded with 4 channels, nonempty object, >10% fully transparent pixels and four transparent corners.",
+  "images": [
+    {
+      "file": "red-king/front.png",
+      "view": "front",
+      "width": 1254,
+      "height": 1254,
+      "channels": 4,
+      "format": "PNG RGBA",
+      "transparentBackground": true,
+      "transparentCornersVerified": true
+    },
+    {
+      "file": "red-king/back.png",
+      "view": "back",
+      "width": 1254,
+      "height": 1254,
+      "channels": 4,
+      "format": "PNG RGBA",
+      "transparentBackground": true,
+      "transparentCornersVerified": true
+    },
+    {
+      "file": "red-king/left.png",
+      "view": "left",
+      "width": 1254,
+      "height": 1254,
+      "channels": 4,
+      "format": "PNG RGBA",
+      "transparentBackground": true,
+      "transparentCornersVerified": true
+    },
+    {
+      "file": "red-king/right.png",
+      "view": "right",
+      "width": 1254,
+      "height": 1254,
+      "channels": 4,
+      "format": "PNG RGBA",
+      "transparentBackground": true,
+      "transparentCornersVerified": true
+    },
+    {
+      "file": "red-king/top.png",
+      "view": "top",
+      "width": 1254,
+      "height": 1254,
+      "channels": 4,
+      "format": "PNG RGBA",
+      "transparentBackground": true,
+      "transparentCornersVerified": true
+    },
+    {
+      "file": "red-king/bottom.png",
+      "view": "bottom",
+      "width": 1254,
+      "height": 1254,
+      "channels": 4,
+      "format": "PNG RGBA",
+      "transparentBackground": true,
+      "transparentCornersVerified": true
+    },
+    {
+      "file": "black-queen/front.png",
+      "view": "front",
+      "width": 1254,
+      "height": 1254,
+      "channels": 4,
+      "format": "PNG RGBA",
+      "transparentBackground": true,
+      "transparentCornersVerified": true
+    },
+    {
+      "file": "black-queen/back.png",
+      "view": "back",
+      "width": 1254,
+      "height": 1254,
+      "channels": 4,
+      "format": "PNG RGBA",
+      "transparentBackground": true,
+      "transparentCornersVerified": true
+    },
+    {
+      "file": "black-queen/left.png",
+      "view": "left",
+      "width": 1254,
+      "height": 1254,
+      "channels": 4,
+      "format": "PNG RGBA",
+      "transparentBackground": true,
+      "transparentCornersVerified": true
+    },
+    {
+      "file": "black-queen/right.png",
+      "view": "right",
+      "width": 1254,
+      "height": 1254,
+      "channels": 4,
+      "format": "PNG RGBA",
+      "transparentBackground": true,
+      "transparentCornersVerified": true
+    },
+    {
+      "file": "black-queen/top.png",
+      "view": "top",
+      "width": 1254,
+      "height": 1254,
+      "channels": 4,
+      "format": "PNG RGBA",
+      "transparentBackground": true,
+      "transparentCornersVerified": true
+    },
+    {
+      "file": "black-queen/bottom.png",
+      "view": "bottom",
+      "width": 1254,
+      "height": 1254,
+      "channels": 4,
+      "format": "PNG RGBA",
+      "transparentBackground": true,
+      "transparentCornersVerified": true
+    }
+  ]
+}

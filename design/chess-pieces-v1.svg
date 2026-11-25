@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="620" viewBox="0 0 1260 620" role="img" aria-labelledby="title desc">
+  <title id="title">Position Zero chess pieces — silhouette study V1</title>
+  <desc id="desc">A two-row specimen showing ivory and charcoal versions of six elegant, solid chess piece silhouettes. Every piece uses the same black outline and has no internal dividing lines.</desc>
+
+  <defs>
+    <pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="12" height="12" fill="#f5f7f3" />
+      <path d="M0 0v12" stroke="#c9cec8" stroke-width="2" />
+    </pattern>
+
+    <symbol id="king" viewBox="0 0 100 100">
+      <path d="M44 6h12v11h10v12H56v10c9 5 14 13 14 23 0 7-3 13-8 18l18 7c3 1 4 3 4 6v2H16v-2c0-3 1-5 4-6l18-7c-5-5-8-11-8-18 0-10 5-18 14-23V29H34V17h10Z" />
+    </symbol>
+    <symbol id="queen" viewBox="0 0 100 100">
+      <path d="M18 14 35 32 42 8l8 22 8-22 7 24 17-18-10 42c-2 9-6 17-12 24l19 7c3 1 5 4 5 7v1H16v-1c0-3 2-6 5-7l19-7c-6-7-10-15-12-24Z" />
+    </symbol>
+    <symbol id="rook" viewBox="0 0 100 100">
+      <path d="M21 10h16v12h8V10h10v12h8V10h16v22l-8 7-4 35 14 13c2 2 3 4 3 7v1H16v-1c0-3 1-5 3-7l14-13-4-35-8-7Z" />
+    </symbol>
+    <symbol id="bishop" viewBox="0 0 100 100">
+      <path d="M50 7c-12 9-18 19-15 29 2 7 9 11 9 19 0 7-5 14-13 23L19 87c-2 2-3 4-3 7v1h68v-1c0-3-1-5-3-7l-12-9c-8-9-13-16-13-23 0-8 7-12 9-19 3-10-3-20-15-29Z" />
+    </symbol>
+    <symbol id="knight" viewBox="0 0 100 100">
+      <path d="M17 95v-3c0-3 2-5 5-7l9-6c2-11 7-20 14-27-8-3-13-8-15-15-1-7 2-13 9-18L48 6l7 18c12 2 22 7 27 15 5 9 2 17-7 21-7 3-13 2-19-2-2 8 1 16 9 22l14 7c3 1 5 4 5 7v1Z" />
+    </symbol>
+    <symbol id="pawn" viewBox="0 0 100 100">
+      <path d="M50 9c-9 0-16 7-16 16 0 7 4 13 10 15-9 5-13 13-13 23 0 7 3 13 8 18l-18 7c-3 1-5 4-5 7h68c0-3-2-6-5-7l-18-7c5-5 8-11 8-18 0-10-4-18-13-23 6-2 10-8 10-15 0-9-7-16-16-16Z" />
+    </symbol>
+
+    <style>
+      .page { fill: #e7ebe5; }
+      .cell { stroke: #9ca59e; stroke-width: 1; }
+      .plain { fill: #f8f9f6; }
+      .hatched { fill: url(#hatch); }
+      .piece { stroke: #0a0d0b; stroke-width: 2.6; stroke-linejoin: round; stroke-linecap: round; }
+      .white-piece { fill: #f3f4ef; }
+      .black-piece { fill: #222824; }
+      .title { fill: #151a17; font: 600 30px Georgia, serif; letter-spacing: .02em; }
+      .subtitle { fill: #536058; font: 12px ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .09em; }
+      .row-label { fill: #151a17; font: 700 11px ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .16em; }
+      .piece-label { fill: #536058; font: 700 10px ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .12em; text-anchor: middle; }
+      .swatch-label { fill: #536058; font: 9px ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .09em; }
+    </style>
+  </defs>
+
+  <rect class="page" width="1260" height="620" />
+  <text class="title" x="70" y="55">Position Zero — carved silhouettes</text>
+  <text class="subtitle" x="70" y="82">V1 / ONE CONTINUOUS MASS · BLACK OUTLINE · NO INTERIOR DIVIDERS</text>
+
+  <g transform="translate(898 39)">
+    <rect x="0" y="0" width="20" height="20" rx="2" fill="#f3f4ef" stroke="#0a0d0b" stroke-width="2" />
+    <text class="swatch-label" x="29" y="14">IVORY FILL</text>
+    <rect x="124" y="0" width="20" height="20" rx="2" fill="#222824" stroke="#0a0d0b" stroke-width="2" />
+    <text class="swatch-label" x="153" y="14">CHARCOAL FILL</text>
+  </g>
+
+  <text class="row-label" x="70" y="119">WHITE SIDE · IVORY BODY / BLACK EDGE</text>
+  <g>
+    <rect class="cell plain" x="70" y="130" width="170" height="180" rx="4" />
+    <rect class="cell hatched" x="260" y="130" width="170" height="180" rx="4" />
+    <rect class="cell plain" x="450" y="130" width="170" height="180" rx="4" />
+    <rect class="cell hatched" x="640" y="130" width="170" height="180" rx="4" />
+    <rect class="cell plain" x="830" y="130" width="170" height="180" rx="4" />
+    <rect class="cell hatched" x="1020" y="130" width="170" height="180" rx="4" />
+    <use href="#king" class="piece white-piece" x="95" y="144" width="120" height="120" />
+    <use href="#queen" class="piece white-piece" x="285" y="144" width="120" height="120" />
+    <use href="#rook" class="piece white-piece" x="475" y="144" width="120" height="120" />
+    <use href="#bishop" class="piece white-piece" x="665" y="144" width="120" height="120" />
+    <use href="#knight" class="piece white-piece" x="855" y="144" width="120" height="120" />
+    <use href="#pawn" class="piece white-piece" x="1045" y="144" width="120" height="120" />
+    <text class="piece-label" x="155" y="290">KING</text>
+    <text class="piece-label" x="345" y="290">QUEEN</text>
+    <text class="piece-label" x="535" y="290">ROOK</text>
+    <text class="piece-label" x="725" y="290">BISHOP</text>
+    <text class="piece-label" x="915" y="290">KNIGHT</text>
+    <text class="piece-label" x="1105" y="290">PAWN</text>
+  </g>
+
+  <text class="row-label" x="70" y="339">BLACK SIDE · CHARCOAL BODY / BLACK EDGE</text>
+  <g>
+    <rect class="cell hatched" x="70" y="350" width="170" height="180" rx="4" />
+    <rect class="cell plain" x="260" y="350" width="170" height="180" rx="4" />
+    <rect class="cell hatched" x="450" y="350" width="170" height="180" rx="4" />
+    <rect class="cell plain" x="640" y="350" width="170" height="180" rx="4" />
+    <rect class="cell hatched" x="830" y="350" width="170" height="180" rx="4" />
+    <rect class="cell plain" x="1020" y="350" width="170" height="180" rx="4" />
+    <use href="#king" class="piece black-piece" x="95" y="364" width="120" height="120" />
+    <use href="#queen" class="piece black-piece" x="285" y="364" width="120" height="120" />
+    <use href="#rook" class="piece black-piece" x="475" y="364" width="120" height="120" />
+    <use href="#bishop" class="piece black-piece" x="665" y="364" width="120" height="120" />
+    <use href="#knight" class="piece black-piece" x="855" y="364" width="120" height="120" />
+    <use href="#pawn" class="piece black-piece" x="1045" y="364" width="120" height="120" />
+    <text class="piece-label" x="155" y="510">KING</text>
+    <text class="piece-label" x="345" y="510">QUEEN</text>
+    <text class="piece-label" x="535" y="510">ROOK</text>
+    <text class="piece-label" x="725" y="510">BISHOP</text>
+    <text class="piece-label" x="915" y="510">KNIGHT</text>
+    <text class="piece-label" x="1105" y="510">PAWN</text>
+  </g>
+
+  <line x1="70" y1="570" x2="1190" y2="570" stroke="#9ca59e" />
+  <text class="subtitle" x="70" y="594">SHARED SILHOUETTE SYSTEM · 2.6 PX BLACK EDGE · OPTIMIZED FOR 64–96 PX BOARD CELLS</text>
+</svg>

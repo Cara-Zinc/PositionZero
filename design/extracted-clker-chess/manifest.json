@@ -1,0 +1,18 @@
+{
+  "source": "https://pixabay.com/vectors/chessboard-chess-board-game-29630/",
+  "note": "Original vector by Clker-Free-Vector-Images. Groups cropped to individual chess pieces.",
+  "pieces": [
+    "white-king.svg",
+    "white-queen.svg",
+    "white-rook.svg",
+    "white-bishop.svg",
+    "white-knight.svg",
+    "white-pawn.svg",
+    "black-king.svg",
+    "black-queen.svg",
+    "black-rook.svg",
+    "black-bishop.svg",
+    "black-knight.svg",
+    "black-pawn.svg"
+  ]
+}

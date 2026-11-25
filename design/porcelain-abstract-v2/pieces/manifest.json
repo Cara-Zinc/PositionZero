@@ -1,0 +1,182 @@
+[
+  {
+    "file": "white-king.png",
+    "source": {
+      "id": 1,
+      "count": 80721,
+      "left": 28,
+      "right": 257,
+      "top": 43,
+      "bottom": 526
+    },
+    "canvas": 512,
+    "baseline": 475,
+    "visibleWidth": 207,
+    "visibleHeight": 430
+  },
+  {
+    "file": "white-queen.png",
+    "source": {
+      "id": 2,
+      "count": 83290,
+      "left": 278,
+      "right": 536,
+      "top": 50,
+      "bottom": 525
+    },
+    "canvas": 512,
+    "baseline": 475,
+    "visibleWidth": 231,
+    "visibleHeight": 420
+  },
+  {
+    "file": "white-bishop.png",
+    "source": {
+      "id": 3,
+      "count": 57615,
+      "left": 542,
+      "right": 759,
+      "top": 77,
+      "bottom": 525
+    },
+    "canvas": 512,
+    "baseline": 475,
+    "visibleWidth": 197,
+    "visibleHeight": 400
+  },
+  {
+    "file": "white-knight.png",
+    "source": {
+      "id": 4,
+      "count": 66873,
+      "left": 780,
+      "right": 991,
+      "top": 138,
+      "bottom": 526
+    },
+    "canvas": 512,
+    "baseline": 475,
+    "visibleWidth": 212,
+    "visibleHeight": 385
+  },
+  {
+    "file": "white-rook.png",
+    "source": {
+      "id": 5,
+      "count": 81912,
+      "left": 991,
+      "right": 1325,
+      "top": 153,
+      "bottom": 526
+    },
+    "canvas": 512,
+    "baseline": 475,
+    "visibleWidth": 328,
+    "visibleHeight": 365
+  },
+  {
+    "file": "white-pawn.png",
+    "source": {
+      "id": 6,
+      "count": 51100,
+      "left": 1327,
+      "right": 1523,
+      "top": 179,
+      "bottom": 526
+    },
+    "canvas": 512,
+    "baseline": 475,
+    "visibleWidth": 201,
+    "visibleHeight": 350
+  },
+  {
+    "file": "black-king.png",
+    "source": {
+      "id": 7,
+      "count": 88817,
+      "left": 16,
+      "right": 281,
+      "top": 537,
+      "bottom": 996
+    },
+    "canvas": 512,
+    "baseline": 475,
+    "visibleWidth": 251,
+    "visibleHeight": 430
+  },
+  {
+    "file": "black-queen.png",
+    "source": {
+      "id": 8,
+      "count": 70697,
+      "left": 295,
+      "right": 528,
+      "top": 546,
+      "bottom": 996
+    },
+    "canvas": 512,
+    "baseline": 475,
+    "visibleWidth": 221,
+    "visibleHeight": 420
+  },
+  {
+    "file": "black-bishop.png",
+    "source": {
+      "id": 9,
+      "count": 75285,
+      "left": 543,
+      "right": 790,
+      "top": 550,
+      "bottom": 996
+    },
+    "canvas": 512,
+    "baseline": 475,
+    "visibleWidth": 224,
+    "visibleHeight": 400
+  },
+  {
+    "file": "black-knight.png",
+    "source": {
+      "id": 10,
+      "count": 66956,
+      "left": 797,
+      "right": 1022,
+      "top": 587,
+      "bottom": 996
+    },
+    "canvas": 512,
+    "baseline": 475,
+    "visibleWidth": 215,
+    "visibleHeight": 385
+  },
+  {
+    "file": "black-rook.png",
+    "source": {
+      "id": 12,
+      "count": 78421,
+      "left": 1038,
+      "right": 1342,
+      "top": 632,
+      "bottom": 996
+    },
+    "canvas": 512,
+    "baseline": 475,
+    "visibleWidth": 306,
+    "visibleHeight": 365
+  },
+  {
+    "file": "black-pawn.png",
+    "source": {
+      "id": 11,
+      "count": 48436,
+      "left": 1343,
+      "right": 1525,
+      "top": 631,
+      "bottom": 996
+    },
+    "canvas": 512,
+    "baseline": 475,
+    "visibleWidth": 178,
+    "visibleHeight": 350
+  }
+]

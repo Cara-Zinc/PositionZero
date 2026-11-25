@@ -1,0 +1,11 @@
+{
+  "objects": 60,
+  "materials": [
+    "Charcoal enamel",
+    "Antique gold",
+    "Warm ivory porcelain"
+  ],
+  "height": 3.53,
+  "forward": "-Y in Blender; glTF exporter converts to Y-up",
+  "scope": "Stylized geometric prototype, not a sculptural replica; not installed in app."
+}

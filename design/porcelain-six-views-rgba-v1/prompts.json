@@ -1,0 +1,90 @@
+{
+  "mode": "built-in ImageGen",
+  "intent": "one view per transparent image",
+  "assets": [
+    {
+      "file": "red-king/front.png",
+      "piece": "red-king",
+      "view": "front",
+      "ref": "/Users/zincara/self_learn/PositionZero/design/porcelain-six-views-v1/red-king-six-views-v2.png",
+      "prompt": "Use case: background-extraction / precise-object-edit.\nThe input is a six-view design sheet. Extract ONLY the upper left / FRONT panel's sculpture as ONE separate reference PNG, for the RED KING porcelain blacksmith.\nKeep the exact camera angle, silhouette, head tilt, hands, drapery, cap/crown, apron or black-and-gold decoration, props, ivory base geometry and glazed ceramic rendering IN THAT SPECIFIC PANEL. Do not borrow the angle from any other panel. Do not invent a new pose or design. Remove all sheet text, labels, borders, lines, other figures and white background. Preserve ivory-white ceramic parts; they are not background.\nPreserve the entire upright figure AND pedestal exactly; never crop top or base. Do not add a second figure.\nOutput a square image with genuine transparent RGBA background, no white or colored canvas, no floor, no cast shadow, no checkerboard drawing. One full object centered, generous 8% transparent padding; preserve original aspect ratio. All opaque white porcelain remains intact; only background is transparent. Do not relight or alter ornament placements. No text, no watermarks."
+    },
+    {
+      "file": "red-king/back.png",
+      "piece": "red-king",
+      "view": "back",
+      "ref": "/Users/zincara/self_learn/PositionZero/design/porcelain-six-views-v1/red-king-six-views-v2.png",
+      "prompt": "Use case: background-extraction / precise-object-edit.\nThe input is a six-view design sheet. Extract ONLY the upper middle / BACK panel's sculpture as ONE separate reference PNG, for the RED KING porcelain blacksmith.\nKeep the exact camera angle, silhouette, head tilt, hands, drapery, cap/crown, apron or black-and-gold decoration, props, ivory base geometry and glazed ceramic rendering IN THAT SPECIFIC PANEL. Do not borrow the angle from any other panel. Do not invent a new pose or design. Remove all sheet text, labels, borders, lines, other figures and white background. Preserve ivory-white ceramic parts; they are not background.\nPreserve the entire upright figure AND pedestal exactly; never crop top or base. Do not add a second figure.\nOutput a square image with genuine transparent RGBA background, no white or colored canvas, no floor, no cast shadow, no checkerboard drawing. One full object centered, generous 8% transparent padding; preserve original aspect ratio. All opaque white porcelain remains intact; only background is transparent. Do not relight or alter ornament placements. No text, no watermarks."
+    },
+    {
+      "file": "red-king/left.png",
+      "piece": "red-king",
+      "view": "left",
+      "ref": "/Users/zincara/self_learn/PositionZero/design/porcelain-six-views-v1/red-king-six-views-v2.png",
+      "prompt": "Use case: background-extraction / precise-object-edit.\nThe input is a six-view design sheet. Extract ONLY the upper right / LEFT panel's sculpture as ONE separate reference PNG, for the RED KING porcelain blacksmith.\nKeep the exact camera angle, silhouette, head tilt, hands, drapery, cap/crown, apron or black-and-gold decoration, props, ivory base geometry and glazed ceramic rendering IN THAT SPECIFIC PANEL. Do not borrow the angle from any other panel. Do not invent a new pose or design. Remove all sheet text, labels, borders, lines, other figures and white background. Preserve ivory-white ceramic parts; they are not background.\nPreserve the entire upright figure AND pedestal exactly; never crop top or base. Do not add a second figure.\nOutput a square image with genuine transparent RGBA background, no white or colored canvas, no floor, no cast shadow, no checkerboard drawing. One full object centered, generous 8% transparent padding; preserve original aspect ratio. All opaque white porcelain remains intact; only background is transparent. Do not relight or alter ornament placements. No text, no watermarks."
+    },
+    {
+      "file": "red-king/right.png",
+      "piece": "red-king",
+      "view": "right",
+      "ref": "/Users/zincara/self_learn/PositionZero/design/porcelain-six-views-v1/red-king-six-views-v2.png",
+      "prompt": "Use case: background-extraction / precise-object-edit.\nThe input is a six-view design sheet. Extract ONLY the lower left / RIGHT panel's sculpture as ONE separate reference PNG, for the RED KING porcelain blacksmith.\nKeep the exact camera angle, silhouette, head tilt, hands, drapery, cap/crown, apron or black-and-gold decoration, props, ivory base geometry and glazed ceramic rendering IN THAT SPECIFIC PANEL. Do not borrow the angle from any other panel. Do not invent a new pose or design. Remove all sheet text, labels, borders, lines, other figures and white background. Preserve ivory-white ceramic parts; they are not background.\nPreserve the entire upright figure AND pedestal exactly; never crop top or base. Do not add a second figure.\nOutput a square image with genuine transparent RGBA background, no white or colored canvas, no floor, no cast shadow, no checkerboard drawing. One full object centered, generous 8% transparent padding; preserve original aspect ratio. All opaque white porcelain remains intact; only background is transparent. Do not relight or alter ornament placements. No text, no watermarks."
+    },
+    {
+      "file": "red-king/top.png",
+      "piece": "red-king",
+      "view": "top",
+      "ref": "/Users/zincara/self_learn/PositionZero/design/porcelain-six-views-v1/red-king-six-views-v2.png",
+      "prompt": "Use case: background-extraction / precise-object-edit.\nThe input is a six-view design sheet. Extract ONLY the lower middle / TOP panel's sculpture as ONE separate reference PNG, for the RED KING porcelain blacksmith.\nKeep the exact camera angle, silhouette, head tilt, hands, drapery, cap/crown, apron or black-and-gold decoration, props, ivory base geometry and glazed ceramic rendering IN THAT SPECIFIC PANEL. Do not borrow the angle from any other panel. Do not invent a new pose or design. Remove all sheet text, labels, borders, lines, other figures and white background. Preserve ivory-white ceramic parts; they are not background.\nIt is the vertically overhead TOP plan projection: preserve foreshortening; statue front toward bottom of image; no standing figure.\nOutput a square image with genuine transparent RGBA background, no white or colored canvas, no floor, no cast shadow, no checkerboard drawing. One full object centered, generous 8% transparent padding; preserve original aspect ratio. All opaque white porcelain remains intact; only background is transparent. Do not relight or alter ornament placements. No text, no watermarks."
+    },
+    {
+      "file": "red-king/bottom.png",
+      "piece": "red-king",
+      "view": "bottom",
+      "ref": "/Users/zincara/self_learn/PositionZero/design/porcelain-six-views-v1/red-king-six-views-v2.png",
+      "prompt": "Use case: background-extraction / precise-object-edit.\nThe input is a six-view design sheet. Extract ONLY the lower right / BOTTOM panel's sculpture as ONE separate reference PNG, for the RED KING porcelain blacksmith.\nKeep the exact camera angle, silhouette, head tilt, hands, drapery, cap/crown, apron or black-and-gold decoration, props, ivory base geometry and glazed ceramic rendering IN THAT SPECIFIC PANEL. Do not borrow the angle from any other panel. Do not invent a new pose or design. Remove all sheet text, labels, borders, lines, other figures and white background. Preserve ivory-white ceramic parts; they are not background.\nIt is the BOTTOM view: only the plain solid ivory pedestal underside footprint, no figure, head, feet, decorations, coins or text visible. Preserve the rounded polygon shape from that panel.\nOutput a square image with genuine transparent RGBA background, no white or colored canvas, no floor, no cast shadow, no checkerboard drawing. One full object centered, generous 8% transparent padding; preserve original aspect ratio. All opaque white porcelain remains intact; only background is transparent. Do not relight or alter ornament placements. No text, no watermarks."
+    },
+    {
+      "file": "black-queen/front.png",
+      "piece": "black-queen",
+      "view": "front",
+      "ref": "/Users/zincara/self_learn/PositionZero/design/porcelain-six-views-v1/black-queen-six-views-v2.png",
+      "prompt": "Use case: background-extraction / precise-object-edit.\nThe input is a six-view design sheet. Extract ONLY the upper left / FRONT panel's sculpture as ONE separate reference PNG, for the BLACK QUEEN porcelain allegorical woman.\nKeep the exact camera angle, silhouette, head tilt, hands, drapery, cap/crown, apron or black-and-gold decoration, props, ivory base geometry and glazed ceramic rendering IN THAT SPECIFIC PANEL. Do not borrow the angle from any other panel. Do not invent a new pose or design. Remove all sheet text, labels, borders, lines, other figures and white background. Preserve ivory-white ceramic parts; they are not background.\nPreserve the entire upright figure AND pedestal exactly; never crop top or base. Do not add a second figure.\nOutput a square image with genuine transparent RGBA background, no white or colored canvas, no floor, no cast shadow, no checkerboard drawing. One full object centered, generous 8% transparent padding; preserve original aspect ratio. All opaque white porcelain remains intact; only background is transparent. Do not relight or alter ornament placements. No text, no watermarks."
+    },
+    {
+      "file": "black-queen/back.png",
+      "piece": "black-queen",
+      "view": "back",
+      "ref": "/Users/zincara/self_learn/PositionZero/design/porcelain-six-views-v1/black-queen-six-views-v2.png",
+      "prompt": "Use case: background-extraction / precise-object-edit.\nThe input is a six-view design sheet. Extract ONLY the upper middle / BACK panel's sculpture as ONE separate reference PNG, for the BLACK QUEEN porcelain allegorical woman.\nKeep the exact camera angle, silhouette, head tilt, hands, drapery, cap/crown, apron or black-and-gold decoration, props, ivory base geometry and glazed ceramic rendering IN THAT SPECIFIC PANEL. Do not borrow the angle from any other panel. Do not invent a new pose or design. Remove all sheet text, labels, borders, lines, other figures and white background. Preserve ivory-white ceramic parts; they are not background.\nPreserve the entire upright figure AND pedestal exactly; never crop top or base. Do not add a second figure.\nOutput a square image with genuine transparent RGBA background, no white or colored canvas, no floor, no cast shadow, no checkerboard drawing. One full object centered, generous 8% transparent padding; preserve original aspect ratio. All opaque white porcelain remains intact; only background is transparent. Do not relight or alter ornament placements. No text, no watermarks."
+    },
+    {
+      "file": "black-queen/left.png",
+      "piece": "black-queen",
+      "view": "left",
+      "ref": "/Users/zincara/self_learn/PositionZero/design/porcelain-six-views-v1/black-queen-six-views-v2.png",
+      "prompt": "Use case: background-extraction / precise-object-edit.\nThe input is a six-view design sheet. Extract ONLY the upper right / LEFT panel's sculpture as ONE separate reference PNG, for the BLACK QUEEN porcelain allegorical woman.\nKeep the exact camera angle, silhouette, head tilt, hands, drapery, cap/crown, apron or black-and-gold decoration, props, ivory base geometry and glazed ceramic rendering IN THAT SPECIFIC PANEL. Do not borrow the angle from any other panel. Do not invent a new pose or design. Remove all sheet text, labels, borders, lines, other figures and white background. Preserve ivory-white ceramic parts; they are not background.\nPreserve the entire upright figure AND pedestal exactly; never crop top or base. Do not add a second figure.\nOutput a square image with genuine transparent RGBA background, no white or colored canvas, no floor, no cast shadow, no checkerboard drawing. One full object centered, generous 8% transparent padding; preserve original aspect ratio. All opaque white porcelain remains intact; only background is transparent. Do not relight or alter ornament placements. No text, no watermarks."
+    },
+    {
+      "file": "black-queen/right.png",
+      "piece": "black-queen",
+      "view": "right",
+      "ref": "/Users/zincara/self_learn/PositionZero/design/porcelain-six-views-v1/black-queen-six-views-v2.png",
+      "prompt": "Use case: background-extraction / precise-object-edit.\nThe input is a six-view design sheet. Extract ONLY the lower left / RIGHT panel's sculpture as ONE separate reference PNG, for the BLACK QUEEN porcelain allegorical woman.\nKeep the exact camera angle, silhouette, head tilt, hands, drapery, cap/crown, apron or black-and-gold decoration, props, ivory base geometry and glazed ceramic rendering IN THAT SPECIFIC PANEL. Do not borrow the angle from any other panel. Do not invent a new pose or design. Remove all sheet text, labels, borders, lines, other figures and white background. Preserve ivory-white ceramic parts; they are not background.\nPreserve the entire upright figure AND pedestal exactly; never crop top or base. Do not add a second figure.\nOutput a square image with genuine transparent RGBA background, no white or colored canvas, no floor, no cast shadow, no checkerboard drawing. One full object centered, generous 8% transparent padding; preserve original aspect ratio. All opaque white porcelain remains intact; only background is transparent. Do not relight or alter ornament placements. No text, no watermarks."
+    },
+    {
+      "file": "black-queen/top.png",
+      "piece": "black-queen",
+      "view": "top",
+      "ref": "/Users/zincara/self_learn/PositionZero/design/porcelain-six-views-v1/black-queen-six-views-v2.png",
+      "prompt": "Use case: background-extraction / precise-object-edit.\nThe input is a six-view design sheet. Extract ONLY the lower middle / TOP panel's sculpture as ONE separate reference PNG, for the BLACK QUEEN porcelain allegorical woman.\nKeep the exact camera angle, silhouette, head tilt, hands, drapery, cap/crown, apron or black-and-gold decoration, props, ivory base geometry and glazed ceramic rendering IN THAT SPECIFIC PANEL. Do not borrow the angle from any other panel. Do not invent a new pose or design. Remove all sheet text, labels, borders, lines, other figures and white background. Preserve ivory-white ceramic parts; they are not background.\nIt is the vertically overhead TOP plan projection: preserve foreshortening; statue front toward bottom of image; no standing figure.\nOutput a square image with genuine transparent RGBA background, no white or colored canvas, no floor, no cast shadow, no checkerboard drawing. One full object centered, generous 8% transparent padding; preserve original aspect ratio. All opaque white porcelain remains intact; only background is transparent. Do not relight or alter ornament placements. No text, no watermarks."
+    },
+    {
+      "file": "black-queen/bottom.png",
+      "piece": "black-queen",
+      "view": "bottom",
+      "ref": "/Users/zincara/self_learn/PositionZero/design/porcelain-six-views-v1/black-queen-six-views-v2.png",
+      "prompt": "Use case: background-extraction / precise-object-edit.\nThe input is a six-view design sheet. Extract ONLY the lower right / BOTTOM panel's sculpture as ONE separate reference PNG, for the BLACK QUEEN porcelain allegorical woman.\nKeep the exact camera angle, silhouette, head tilt, hands, drapery, cap/crown, apron or black-and-gold decoration, props, ivory base geometry and glazed ceramic rendering IN THAT SPECIFIC PANEL. Do not borrow the angle from any other panel. Do not invent a new pose or design. Remove all sheet text, labels, borders, lines, other figures and white background. Preserve ivory-white ceramic parts; they are not background.\nIt is the BOTTOM view: only the plain solid ivory pedestal underside footprint, no figure, head, feet, decorations, coins or text visible. Preserve the rounded polygon shape from that panel.\nOutput a square image with genuine transparent RGBA background, no white or colored canvas, no floor, no cast shadow, no checkerboard drawing. One full object centered, generous 8% transparent padding; preserve original aspect ratio. All opaque white porcelain remains intact; only background is transparent. Do not relight or alter ornament placements. No text, no watermarks."
+    }
+  ]
+}

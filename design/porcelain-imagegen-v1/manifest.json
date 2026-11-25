@@ -1,0 +1,141 @@
+{
+  "generator": "ImageGen",
+  "format": "PNG RGBA",
+  "canvas": 512,
+  "redMapsTo": "w",
+  "baseline": 470,
+  "pieces": [
+    {
+      "file": "white-king.png",
+      "color": "w",
+      "role": "king",
+      "width": 512,
+      "height": 512,
+      "visibleWidth": 154,
+      "visibleHeight": 420,
+      "baseline": 470,
+      "alpha": true
+    },
+    {
+      "file": "white-queen.png",
+      "color": "w",
+      "role": "queen",
+      "width": 512,
+      "height": 512,
+      "visibleWidth": 181,
+      "visibleHeight": 405,
+      "baseline": 470,
+      "alpha": true
+    },
+    {
+      "file": "white-bishop.png",
+      "color": "w",
+      "role": "bishop",
+      "width": 512,
+      "height": 512,
+      "visibleWidth": 155,
+      "visibleHeight": 386,
+      "baseline": 470,
+      "alpha": true
+    },
+    {
+      "file": "white-knight.png",
+      "color": "w",
+      "role": "knight",
+      "width": 512,
+      "height": 512,
+      "visibleWidth": 177,
+      "visibleHeight": 360,
+      "baseline": 470,
+      "alpha": true
+    },
+    {
+      "file": "white-rook.png",
+      "color": "w",
+      "role": "rook",
+      "width": 512,
+      "height": 512,
+      "visibleWidth": 343,
+      "visibleHeight": 348,
+      "baseline": 470,
+      "alpha": true
+    },
+    {
+      "file": "white-pawn.png",
+      "color": "w",
+      "role": "pawn",
+      "width": 512,
+      "height": 512,
+      "visibleWidth": 229,
+      "visibleHeight": 325,
+      "baseline": 470,
+      "alpha": true
+    },
+    {
+      "file": "black-king.png",
+      "color": "b",
+      "role": "king",
+      "width": 512,
+      "height": 512,
+      "visibleWidth": 181,
+      "visibleHeight": 420,
+      "baseline": 470,
+      "alpha": true
+    },
+    {
+      "file": "black-queen.png",
+      "color": "b",
+      "role": "queen",
+      "width": 512,
+      "height": 512,
+      "visibleWidth": 134,
+      "visibleHeight": 405,
+      "baseline": 470,
+      "alpha": true
+    },
+    {
+      "file": "black-bishop.png",
+      "color": "b",
+      "role": "bishop",
+      "width": 512,
+      "height": 512,
+      "visibleWidth": 158,
+      "visibleHeight": 386,
+      "baseline": 470,
+      "alpha": true
+    },
+    {
+      "file": "black-knight.png",
+      "color": "b",
+      "role": "knight",
+      "width": 512,
+      "height": 512,
+      "visibleWidth": 166,
+      "visibleHeight": 360,
+      "baseline": 470,
+      "alpha": true
+    },
+    {
+      "file": "black-rook.png",
+      "color": "b",
+      "role": "rook",
+      "width": 512,
+      "height": 512,
+      "visibleWidth": 269,
+      "visibleHeight": 348,
+      "baseline": 470,
+      "alpha": true
+    },
+    {
+      "file": "black-pawn.png",
+      "color": "b",
+      "role": "pawn",
+      "width": 512,
+      "height": 512,
+      "visibleWidth": 152,
+      "visibleHeight": 325,
+      "baseline": 470,
+      "alpha": true
+    }
+  ]
+}

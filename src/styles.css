@@ -1,0 +1,391 @@
+:root {
+  font-family: "SFMono-Regular", "SF Mono", Menlo, Monaco, monospace;
+  color: #28332f;
+  background: #f4f6f1;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --paper: #f4f6f1;
+  --ink: #28332f;
+
+  /* Board skin tokens. These mirror the `mono` skin so a board still renders
+     before a skin is applied; lib/appearance.ts overwrites all of them. */
+  --board-light: #ffffff;
+  --board-dark: #ffffff;
+  --board-light-texture: none;
+  --board-dark-texture: repeating-linear-gradient(135deg, #ffffff 0 2px, #000000 2px 3px, #ffffff 3px 6px);
+  --board-frame-surface: #ffffff;
+  --board-frame-line: #000000;
+  --board-frame-ink: #000000;
+  --board-ink-light: #000000;
+  --board-ink-dark: #000000;
+  --piece-light-fill: #ffffff;
+  --piece-light-panel: #dfe3e1;
+  --piece-light-trim: #a8aeab;
+  --piece-light-edge: #000000;
+  --piece-dark-fill: #111111;
+  --piece-dark-panel: #3a403d;
+  --piece-dark-trim: #8b938f;
+  --piece-dark-edge: #000000;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+button, textarea, input, select { font: inherit; border-radius: 0; }
+button { color: inherit; background: none; border: 0; cursor: pointer; }
+button:disabled { cursor: not-allowed; opacity: .34; }
+button:focus-visible, textarea:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 3px double var(--ink);
+  outline-offset: 2px;
+}
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+.app { --paper: #f4f6f1; --ink: #28332f; width: 100%; height: 100%; color: var(--ink); background: var(--paper); }
+.app.is-inverted { --paper: #1b2421; --ink: #d9e4de; }
+.eyebrow { display: block; font-size: 9px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+
+.app-header {
+  height: 58px;
+  display: grid;
+  grid-template-columns: 228px 1fr auto;
+  align-items: stretch;
+  border-bottom: 1px solid var(--ink);
+  background: var(--paper);
+}
+.brand { display: flex; align-items: center; gap: .55rem; padding: 0 18px; border-right: 1px solid var(--ink); font-size: 13px; letter-spacing: .08em; }
+.logo-mark { flex: 0 0 auto; display: block; color: var(--ink); }
+.brand strong { color: var(--paper); background: var(--ink); padding: 5px 7px; }
+.app-header nav { grid-column: 3; display: flex; height: 100%; }
+.app-header nav > button { min-width: 72px; padding: 0 14px; border-left: 1px solid var(--ink); font-size: 10px; text-transform: uppercase; letter-spacing: .06em; }
+.app-header nav > button:hover { color: var(--paper); background: var(--ink); }
+.count { display: inline-grid; place-items: center; min-width: 17px; height: 17px; margin-left: 4px; color: var(--paper); background: var(--ink); }
+.mobile-index { display: none; }
+
+.music-player { height: 100%; min-width: 0; display: flex; align-items: stretch; border-left: 1px solid var(--ink); }
+.music-player audio { display: none; }
+.music-now { width: 210px; min-width: 0; padding: 9px 12px; display: flex; flex-direction: column; justify-content: center; gap: 4px; overflow: hidden; }
+.music-now span { font-size: 7px; font-weight: 800; letter-spacing: .13em; opacity: .6; }
+.music-now strong { overflow: hidden; font: 500 12px/1.15 "Iowan Old Style", Georgia, serif; text-overflow: ellipsis; white-space: nowrap; }
+.music-player.has-error .music-now span { opacity: 1; }
+.music-modes { display: grid; grid-template-columns: repeat(2, auto); border-left: 1px solid var(--ink); }
+.music-modes button { min-width: 67px; padding: 0 9px; font-size: 8px; font-weight: 700; text-transform: uppercase; }
+.music-modes button + button { border-left: 1px solid var(--ink); }
+.music-modes button:hover, .music-modes button.is-active { color: var(--paper); background: var(--ink); }
+.music-play, .music-mute { border-left: 1px solid var(--ink) !important; }
+.music-play { width: 46px; min-width: 46px !important; padding: 0 !important; font-size: 13px !important; }
+.music-mute { min-width: 55px !important; padding: 0 8px !important; font-size: 7px !important; font-weight: 800; }
+.music-mute.is-active { color: var(--paper); background: var(--ink); }
+.music-volume { width: 116px; padding: 0 10px; display: flex; align-items: center; gap: 7px; border-left: 1px solid var(--ink); }
+.music-volume input { width: 75px; height: 18px; margin: 0; appearance: none; color: var(--ink); background: transparent; cursor: pointer; }
+.music-volume input::-webkit-slider-runnable-track { height: 1px; background: var(--ink); }
+.music-volume input::-webkit-slider-thumb { width: 8px; height: 14px; margin-top: -6px; appearance: none; border: 1px solid var(--ink); border-radius: 0; background: var(--paper); }
+.music-volume input::-moz-range-track { height: 1px; background: var(--ink); }
+.music-volume input::-moz-range-thumb { width: 8px; height: 14px; border: 1px solid var(--ink); border-radius: 0; background: var(--paper); }
+.music-volume output { width: 20px; font-size: 7px; text-align: right; }
+
+/* Board skins: trigger, dressing room, and the swatch that mirrors the board. */
+.skin-picker { position: relative; display: flex; border-left: 1px solid var(--ink); }
+.skin-trigger { width: 58px; min-width: 58px; display: grid; place-items: center; }
+.skin-trigger:hover, .skin-trigger[aria-expanded="true"] { color: var(--paper); background: var(--ink); }
+.skin-swatch { width: 26px; height: 26px; display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); border: 1px solid var(--board-frame-line); }
+.skin-square { position: relative; display: grid; place-items: center; overflow: hidden; }
+.skin-piece { width: 82%; height: 82%; display: grid; place-items: center; }
+.skin-piece .chess-piece-svg { width: 100%; height: 100%; }
+
+.skin-panel { position: absolute; top: 100%; right: 0; z-index: 90; width: 308px; color: var(--ink); background: var(--paper); border: 2px solid var(--ink); box-shadow: 6px 6px 0 var(--ink); }
+.skin-panel-head { height: 38px; padding: 0 12px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--ink); }
+.skin-dismiss { padding: 0 4px; font-size: 19px; line-height: 1; }
+.skin-options { display: grid; }
+.skin-option { width: 100%; min-height: 58px; padding: 8px 12px; display: grid; grid-template-columns: 42px minmax(0, 1fr) 16px; align-items: center; gap: 11px; border-bottom: 1px solid var(--ink); text-align: left; }
+.skin-option:last-child { border-bottom: 0; }
+.skin-option .skin-swatch { width: 42px; height: 42px; }
+.skin-option:hover { background: color-mix(in srgb, var(--ink) 7%, var(--paper)); }
+.skin-option.is-active { color: var(--paper); background: var(--ink); }
+.skin-option-meta { min-width: 0; display: grid; gap: 3px; }
+.skin-option-meta strong { font-size: 11px; letter-spacing: .02em; }
+.skin-option-meta small { font-size: 8px; text-transform: uppercase; letter-spacing: .05em; opacity: .68; }
+.skin-option-mark { font-size: 11px; text-align: right; }
+.skin-note { margin: 0; padding: 9px 12px; border-top: 1px solid var(--ink); font: 12px/1.4 "Iowan Old Style", Georgia, serif; opacity: .78; }
+
+.workspace { display: grid; grid-template-columns: 228px minmax(0, 1fr); height: calc(100% - 58px); }
+.study-index { min-width: 0; display: flex; flex-direction: column; border-right: 1px solid var(--ink); background: var(--paper); z-index: 20; }
+.index-heading { height: 64px; flex: 0 0 auto; padding: 13px 15px; display: flex; align-items: flex-end; justify-content: space-between; border-bottom: 1px solid var(--ink); }
+.index-heading strong { font-size: 22px; line-height: 1; }
+.study-list { flex: 1; min-height: 0; overflow: auto; }
+.empty-index { padding: 22px 15px; font-size: 10px; line-height: 1.7; opacity: .62; }
+.study-card { width: 100%; min-height: 92px; padding: 13px 15px; text-align: left; border-bottom: 1px solid var(--ink); display: flex; flex-direction: column; gap: 7px; position: relative; }
+.study-card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: var(--ink); }
+.study-card:hover::before, .study-card.is-active::before { width: 5px; }
+.study-card.is-active { color: var(--paper); background: var(--ink); }
+.study-card strong { font-family: "Iowan Old Style", Georgia, serif; font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.study-card small { opacity: .62; font-size: 9px; text-transform: uppercase; }
+.card-number, .card-stamp { font-size: 9px; font-weight: 700; letter-spacing: .12em; }
+.index-footer { flex: 0 0 auto; display: grid; grid-template-columns: 1fr auto; border-top: 1px solid var(--ink); }
+.index-footer > button:last-child { padding: 0 10px; border-left: 1px solid var(--ink); font-size: 8px; text-transform: uppercase; }
+.new-position { min-height: 54px; text-transform: uppercase; font-size: 10px; font-weight: 700; }
+.new-position:hover { color: var(--paper); background: var(--ink); }
+
+.laboratory { min-width: 0; min-height: 0; display: grid; grid-template-columns: minmax(510px, 1fr) minmax(305px, 390px); overflow: hidden; }
+.board-column { --study-width: 700px; overflow: auto; min-width: 0; padding: clamp(20px, 3vw, 44px); background: var(--paper); }
+.position-heading { width: min(100%, var(--study-width, 700px)); margin: 0 auto 18px; display: flex; align-items: end; justify-content: space-between; gap: 15px; }
+.position-heading h1 { margin: 5px 0 0; font: 500 clamp(22px, 2.2vw, 34px)/1 "Iowan Old Style", Georgia, serif; }
+.opening-name { display: block; max-width: 470px; margin-top: 7px; font-size: 8px; text-transform: uppercase; letter-spacing: .04em; opacity: .66; }
+.position-actions { display: flex; border: 1px solid var(--ink); }
+.position-actions button { padding: 8px 10px; font-size: 9px; text-transform: uppercase; }
+.position-actions button + button { border-left: 1px solid var(--ink); }
+.position-actions button:hover { color: var(--paper); background: var(--ink); }
+
+.board-frame {
+  width: min(100%, 700px);
+  margin: auto;
+  padding: 9px 9px 6px;
+  border: 1px solid var(--board-frame-line);
+  background: var(--board-frame-surface);
+}
+.board-layout { display: grid; grid-template-columns: 18px minmax(0, 1fr); grid-template-rows: auto 18px; }
+.board-ranks, .board-files { display: grid; color: var(--board-frame-ink); font: 800 9px/1 "SF Mono", monospace; }
+.board-ranks { grid-template-rows: repeat(8, 1fr); align-items: center; justify-items: start; padding-right: 5px; }
+.board-files { grid-template-columns: repeat(8, minmax(0, 1fr)); align-items: end; justify-items: center; padding-top: 4px; }
+.board-corner { display: block; }
+.board-view-controls { width: min(100%, var(--study-width, 700px)); margin: 0 auto 10px; display: flex; align-items: center; gap: 4px; }
+.board-view-controls button { padding: 7px 12px; border: 1px solid var(--ink); font-size: 11px; }
+.board-view-controls button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.board-view-controls span { margin-left: auto; font-size: 10px; opacity: .65; }
+.board-3d-frame { width: min(100%, var(--study-width, 700px)); margin: auto; border: 1px solid var(--ink); background: #e7e8e8; color: #202329; }
+.board-3d-stage, .board-3d-loading { width: 100%; aspect-ratio: 1; }
+.board-3d-stage { position: relative; touch-action: none; }
+.board-3d-stage canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+.board-3d-loading { display: grid; place-items: center; }
+.board-3d-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 9px 12px; border-top: 1px solid #bcc0c3; font-size: 10px; }
+.board-3d-toolbar span { flex: 1; }
+.board-3d-toolbar button { padding: 5px 8px; border: 1px solid #59606a; }
+.board-3d-hint { margin: 0; padding: 0 12px 9px; font-size: 10px; color: #59606a; }
+.board-3d-keyboard { padding: 8px 12px; border-top: 1px solid #bcc0c3; font-size: 11px; }
+.board-3d-keyboard summary { cursor: pointer; }
+.board-3d-keyboard [role="grid"] { display: grid; grid-template-columns: repeat(8, 1fr); margin-top: 8px; }
+.board-3d-keyboard button { padding: 8px 0; border: 1px solid #bcc0c3; font-size: 11px; }
+.board-3d-keyboard button[aria-selected="true"], .board-3d-keyboard button.is-target { background: #d6ad50; }
+.chess-board { position: relative; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); grid-template-rows: repeat(8, minmax(0, 1fr)); aspect-ratio: 1; border: 2px solid var(--board-frame-line); isolation: isolate; }
+.board-square { position: relative; width: 100%; height: 100%; min-width: 0; min-height: 0; padding: 0; display: grid; place-items: center; overflow: hidden; }
+/* A square declares its own ink, so marks stay legible on a pale square and on
+   a saturated one without the theme needing a single compromise colour. */
+.board-square.is-light, .skin-square.is-light { color: var(--board-ink-light); --board-square-base: var(--board-light); background-color: var(--board-light); background-image: var(--board-light-texture); }
+.board-square.is-dark, .skin-square.is-dark { color: var(--board-ink-dark); --board-square-base: var(--board-dark); background-color: var(--board-dark); background-image: var(--board-dark-texture); }
+.board-square.is-selected::after, .board-square.is-evidence::after { content: ""; position: absolute; inset: 7%; border: 3px double currentColor; z-index: 3; }
+.board-square.is-evidence::after { inset: 13%; border-style: dashed; }
+.board-square.is-target::before { content: ""; position: absolute; width: 15%; aspect-ratio: 1; border-radius: 50%; background: currentColor; z-index: 4; }
+.board-square.is-unreliable::before { content: "?"; position: absolute; inset: 4px 5px auto auto; display: grid; place-items: center; width: 17px; height: 17px; color: var(--board-square-base); background: currentColor; font-size: 10px; z-index: 6; }
+.chess-piece { position: relative; z-index: 5; width: 90%; height: 90%; display: grid; place-items: center; user-select: none; cursor: grab; }
+.chess-piece-svg { display: block; width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+/* Only the carved set follows the palette; the standard set brings its own colours. */
+.chess-piece-standard { width: 86%; height: 86%; }
+/* PNG canvases include transparent padding. Enlarge only this artwork while
+   keeping the actual king silhouette and shared baseline inside its square. */
+.chess-piece > .chess-piece-porcelain { transform: translateY(-1%) scale(1.3); transform-origin: center; }
+.piece-w { --piece-fill: var(--piece-light-fill); --piece-panel: var(--piece-light-panel); --piece-trim: var(--piece-light-trim); --piece-edge: var(--piece-light-edge); }
+.piece-b { --piece-fill: var(--piece-dark-fill); --piece-panel: var(--piece-dark-panel); --piece-trim: var(--piece-dark-trim); --piece-edge: var(--piece-dark-edge); }
+/* Traced from the reference set: a piece is a solid silhouette plus the overlay
+   regions of its pattern, and several contours per layer, so every layer needs
+   even-odd filling for holes to read as holes. */
+.piece-layer { fill-rule: evenodd; stroke-linejoin: round; stroke-linecap: round; }
+.piece-body { fill: var(--piece-fill, var(--piece-light-fill)); stroke: var(--piece-edge, var(--piece-light-edge)); stroke-width: 2.6; }
+.piece-panel { fill: var(--piece-panel, var(--piece-light-panel)); }
+.piece-trim { fill: var(--piece-trim, var(--piece-light-trim)); }
+.square-coordinate { position: absolute; left: 4px; bottom: 3px; font-size: 7px; font-weight: 800; opacity: 0; z-index: 6; }
+.board-square:hover .square-coordinate, .board-square:focus-visible .square-coordinate { opacity: 1; }
+.board-arrows { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 4; pointer-events: none; color: var(--board-frame-ink); overflow: visible; }
+.board-arrows line { stroke: currentColor; stroke-width: .85; stroke-dasharray: 1.8 1.3; stroke-linecap: round; opacity: .76; }
+
+.board-turn { width: min(100%, var(--study-width, 700px)); min-height: 34px; margin: 8px auto 0; padding: 0 9px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 1px solid var(--ink); font-size: 8px; text-transform: uppercase; }
+.board-turn strong { flex: 0 0 auto; padding-right: 9px; border-right: 1px solid var(--ink); }
+.board-turn span { opacity: .68; text-align: right; }
+
+.analysis-path { width: min(100%, var(--study-width, 700px)); margin: 8px auto 0; border: 2px solid var(--ink); }
+.analysis-path-header { min-height: 52px; display: grid; grid-template-columns: minmax(126px, auto) minmax(0, 1fr); border-bottom: 1px solid var(--ink); }
+.analysis-path-title { padding: 8px 10px; display: flex; flex-direction: column; justify-content: space-between; border-right: 1px solid var(--ink); }
+.analysis-path-title strong { font: 500 15px/1 "Iowan Old Style", Georgia, serif; }
+.analysis-path-controls { min-width: 0; display: grid; grid-template-columns: auto auto minmax(66px, 1fr) auto auto; }
+.analysis-path-controls button, .analysis-path-controls output { min-width: 0; padding: 0 9px; display: grid; place-items: center; border-right: 1px solid var(--ink); font-size: 8px; font-weight: 700; text-transform: uppercase; white-space: nowrap; }
+.analysis-path-controls button:last-child { border-right: 0; }
+.analysis-path-controls button:hover:not(:disabled) { color: var(--paper); background: var(--ink); }
+.analysis-path-controls output { color: var(--paper); background: var(--ink); font-size: 10px; letter-spacing: .08em; }
+.analysis-path-note { min-height: 27px; padding: 7px 10px; border-bottom: 1px solid var(--ink); font-size: 8px; line-height: 1.35; text-transform: uppercase; letter-spacing: .035em; }
+
+.fen-strip { width: min(100%, var(--study-width, 700px)); margin: 8px auto 0; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; border: 1px solid var(--ink); font-size: 8px; }
+.fen-strip > * { padding: 7px 8px; }
+.fen-strip span, .fen-strip button { color: var(--paper); background: var(--ink); text-transform: uppercase; }
+.fen-strip code { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.move-tape { min-width: 0; display: flex; overflow-x: auto; scrollbar-width: thin; }
+.move-tape button { flex: 0 0 auto; min-height: 38px; padding: 0 9px; border-right: 1px solid var(--ink); font-family: "Iowan Old Style", Georgia, serif; font-size: 13px; position: relative; }
+.move-tape button.is-active { color: var(--paper); background: var(--ink); }
+.move-tape i { margin-left: 4px; font: 800 9px/1 "SF Mono", monospace; }
+.move-tape .is-inaccuracy:not(.is-active) { text-decoration: underline dotted; }
+.move-tape .is-mistake:not(.is-active) { text-decoration: underline 2px; }
+.move-tape .is-blunder:not(.is-active) { color: var(--paper); background: var(--ink); }
+.study-notes { width: min(100%, var(--study-width, 700px)); margin: 16px auto 0; display: block; }
+.study-notes textarea { width: 100%; min-height: 64px; margin-top: 6px; padding: 10px; resize: vertical; color: var(--ink); background: var(--paper); border: 1px solid var(--ink); font: 14px/1.45 "Iowan Old Style", Georgia, serif; }
+.card-suggestions { width: min(100%, var(--study-width, 700px)); margin: 13px auto 0; border: 3px double var(--ink); }
+.card-suggestions > .eyebrow { padding: 8px 10px; border-bottom: 1px solid var(--ink); }
+.card-suggestions > button { width: 100%; min-height: 38px; padding: 0 10px; display: grid; grid-template-columns: 65px 1fr auto; align-items: center; gap: 8px; border-bottom: 1px solid var(--ink); text-align: left; font-size: 8px; text-transform: uppercase; }
+.card-suggestions > button:last-child { border-bottom: 0; }
+.card-suggestions > button:hover { color: var(--paper); background: var(--ink); }
+.card-suggestions i { font-style: normal; }
+
+.analysis-panel { min-width: 0; min-height: 0; overflow: auto; border-left: 1px solid var(--ink); background: var(--paper); }
+.panel-heading { min-height: 76px; padding: 15px 17px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--ink); }
+.panel-heading h2 { margin: 5px 0 0; font-size: 13px; }
+.engine-state { padding: 5px 7px; border: 1px solid var(--ink); font-size: 8px; text-transform: uppercase; }
+.engine-state.state-thinking { color: var(--paper); background: var(--ink); animation: pulse 1.2s steps(2, end) infinite; }
+.engine-state.state-error { border-style: double; border-width: 3px; }
+.depth-controls { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--ink); }
+.depth-controls button { height: 38px; border-right: 1px solid var(--ink); font-size: 9px; text-transform: uppercase; }
+.depth-controls button:last-child { border-right: 0; }
+.depth-controls button:hover, .depth-controls button.is-active { color: var(--paper); background: var(--ink); }
+.engine-settings { border-bottom: 1px solid var(--ink); }
+.engine-settings summary { min-height: 38px; padding: 0 14px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; font-size: 9px; font-weight: 800; text-transform: uppercase; list-style-position: inside; }
+.engine-settings summary span { opacity: .52; font-size: 7px; letter-spacing: .06em; }
+.engine-settings[open] summary { color: var(--paper); background: var(--ink); }
+.engine-settings-grid { padding: 12px 14px 4px; display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+.engine-settings-grid label { display: grid; gap: 5px; font-size: 8px; text-transform: uppercase; }
+.engine-settings-grid input { width: 100%; height: 30px; padding: 0 7px; border: 1px solid var(--ink); color: var(--ink); background: var(--paper); font: 11px "SF Mono", monospace; }
+.engine-settings p { margin: 2px 14px 10px; font: 11px/1.35 "Iowan Old Style", Georgia, serif; opacity: .68; }
+.settings-apply { width: calc(100% - 28px); min-height: 34px; margin: 0 14px 13px; border: 1px solid var(--ink); font-size: 8px; font-weight: 800; text-transform: uppercase; }
+.settings-apply:hover { color: var(--paper); background: var(--ink); }
+.engine-notice { margin: 14px; padding: 10px; border: 3px double var(--ink); font-size: 10px; line-height: 1.5; }
+.engine-notice button { display: block; margin-top: 10px; padding: 6px 8px; border: 1px solid var(--ink); font-size: 8px; font-weight: 800; text-transform: uppercase; }
+.engine-notice button:hover { color: var(--paper); background: var(--ink); }
+.variation-list { border-bottom: 1px solid var(--ink); }
+.variation { min-height: 102px; display: grid; grid-template-columns: 36px 1fr; border-bottom: 1px solid var(--ink); }
+.variation:last-child { border-bottom: 0; }
+.variation-rank { display: grid; place-items: center; border-right: 1px solid var(--ink); font-size: 9px; writing-mode: vertical-rl; }
+.variation-main { min-width: 0; padding: 12px 13px; }
+.variation-topline { display: flex; align-items: baseline; justify-content: space-between; }
+.variation-topline strong { font: 600 18px/1 "Iowan Old Style", Georgia, serif; }
+.score { padding: 3px 5px; color: var(--paper); background: var(--ink); font-size: 11px; font-weight: 800; }
+.variation p { margin: 9px 0; font: 12px/1.5 "Iowan Old Style", Georgia, serif; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.variation small { font-size: 8px; opacity: .64; }
+.variation-meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.variation-meta button { padding: 4px 6px; border: 1px solid var(--ink); font-size: 8px; text-transform: uppercase; }
+.variation-meta button:hover { color: var(--paper); background: var(--ink); }
+.empty-analysis { padding: 38px 18px; text-align: center; }
+.empty-analysis span { font-size: 10px; font-weight: 800; }
+.empty-analysis p { font: 13px/1.4 "Iowan Old Style", Georgia, serif; }
+.coach-block { padding: 18px; min-height: 160px; border-bottom: 1px solid var(--ink); }
+.coach-block h3 { margin: 15px 0 8px; font-size: 13px; letter-spacing: .04em; }
+.coach-block p { margin: 0 0 12px; font: 16px/1.48 "Iowan Old Style", Georgia, serif; }
+.coach-block small { font-size: 8px; text-transform: uppercase; }
+.primary-action { min-height: 48px; padding: 0 15px; color: var(--paper); background: var(--ink); border: 1px solid var(--ink); font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
+.primary-action:hover:not(:disabled) { color: var(--ink); background: var(--paper); }
+.analysis-panel > .primary-action { width: calc(100% - 28px); margin: 14px; }
+
+.modal-backdrop { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 24px; background: color-mix(in srgb, #101513 76%, transparent); }
+.import-dialog, .game-picker { width: min(920px, 100%); max-height: calc(100vh - 48px); overflow: auto; color: var(--ink); background: var(--paper); border: 2px solid var(--ink); box-shadow: 10px 10px 0 var(--ink); }
+.import-dialog > header { height: 70px; padding: 12px 17px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--ink); }
+.import-dialog h2, .game-picker h2 { margin: 5px 0 0; font: 500 26px/1 "Iowan Old Style", Georgia, serif; }
+.close-button { font-size: 28px; }
+.dialog-tabs { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--ink); }
+.dialog-tabs button { height: 42px; border-right: 1px solid var(--ink); text-transform: uppercase; font-size: 10px; }
+.dialog-tabs button:last-child { border: 0; }
+.dialog-tabs button.is-active { color: var(--paper); background: var(--ink); }
+.dialog-body { padding: 20px; }
+.text-import label { display: block; margin-bottom: 8px; font-size: 10px; text-transform: uppercase; }
+.text-import textarea { width: 100%; min-height: 290px; padding: 14px; border: 1px solid var(--ink); color: var(--ink); background: var(--paper); font: 12px/1.6 "SF Mono", monospace; resize: vertical; }
+.text-import .fen-input { min-height: 120px; }
+.dialog-actions { margin-top: 14px; display: flex; justify-content: flex-end; gap: 8px; }
+.dialog-actions > button:not(.primary-action) { min-height: 48px; padding: 0 15px; border: 1px solid var(--ink); text-transform: uppercase; font-size: 10px; }
+.dialog-error { padding: 11px 20px; color: var(--paper); background: var(--ink); border-top: 3px double var(--paper); font-size: 10px; }
+.image-drop { width: 100%; min-height: 330px; display: grid; place-content: center; gap: 12px; border: 2px dashed var(--ink); }
+.image-drop strong { font-size: 13px; }
+.image-drop span { font: 15px "Iowan Old Style", Georgia, serif; }
+.vision-review { display: grid; grid-template-columns: minmax(150px, .72fr) minmax(280px, 1fr); gap: 15px; }
+.vision-source { border: 1px solid var(--ink); min-height: 200px; display: grid; place-items: center; background: repeating-linear-gradient(45deg, var(--paper) 0 7px, var(--ink) 7px 8px); }
+.vision-source img { max-width: 100%; max-height: 360px; display: block; border: 8px solid var(--paper); }
+.vision-board .board-frame { padding: 5px; }
+.piece-palette { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(13, 1fr); border: 1px solid var(--ink); }
+.piece-palette button { min-height: 40px; display: grid; place-items: center; border-right: 1px solid var(--ink); }
+.piece-palette-glyph { width: 28px; height: 28px; display: block; }
+.piece-palette-glyph .chess-piece-svg { width: 100%; height: 100%; }
+.piece-palette button.is-active { color: var(--paper); background: var(--ink); }
+.fen-metadata { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.fen-metadata label { display: grid; gap: 5px; font-size: 9px; text-transform: uppercase; }
+.fen-metadata select, .fen-metadata input { height: 38px; padding: 0 9px; color: var(--ink); background: var(--paper); border: 1px solid var(--ink); }
+.metadata-warning { grid-column: 1 / -1; margin: 0; padding: 9px; border: 3px double var(--ink); font: 13px/1.45 "Iowan Old Style", Georgia, serif; }
+.vision-review .dialog-actions { grid-column: 1 / -1; }
+.game-picker { max-width: 560px; padding: 22px; }
+.game-picker > button { width: 100%; padding: 13px 0; display: flex; justify-content: space-between; border-bottom: 1px solid var(--ink); text-align: left; }
+.game-picker > button:hover { color: var(--paper); background: var(--ink); padding-inline: 10px; }
+.game-picker > button span { font-size: 9px; }
+.side-picker { width: min(500px, 100%); padding: 24px; color: var(--ink); background: var(--paper); border: 2px solid var(--ink); box-shadow: 10px 10px 0 var(--ink); }
+.side-picker h2 { margin: 8px 0; font: 500 30px/1 "Iowan Old Style", Georgia, serif; }
+.side-picker > p { margin: 0 0 20px; font: 14px/1.45 "Iowan Old Style", Georgia, serif; }
+.side-picker > button { width: 100%; min-height: 56px; padding: 0 12px; display: flex; align-items: center; justify-content: space-between; border: 1px solid var(--ink); border-bottom: 0; text-align: left; }
+.side-picker > button:last-child { border-bottom: 1px solid var(--ink); }
+.side-picker > button:hover { color: var(--paper); background: var(--ink); }
+.side-picker > button span { font-size: 9px; text-transform: uppercase; }
+.side-picker > button strong { font: 600 15px "Iowan Old Style", Georgia, serif; }
+
+.review-layout { --paper: #f4f6f1; --ink: #28332f; height: 100%; display: grid; grid-template-columns: minmax(330px, .7fr) minmax(500px, 1fr); grid-template-rows: 58px 1fr; color: var(--ink); background: var(--paper); }
+.review-header { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; border-bottom: 1px solid var(--ink); font-size: 10px; }
+.review-copy { min-height: 0; padding: clamp(35px, 6vw, 90px); border-right: 1px solid var(--ink); display: flex; flex-direction: column; align-items: flex-start; }
+.review-copy .card-stamp { margin-bottom: auto; padding: 7px 9px; color: var(--paper); background: var(--ink); }
+.review-copy h1 { margin: 12px 0; font: 500 clamp(34px, 5vw, 72px)/.94 "Iowan Old Style", Georgia, serif; }
+.review-copy > p { max-width: 440px; font: 17px/1.5 "Iowan Old Style", Georgia, serif; }
+.text-action { margin-top: 25px; padding-bottom: 3px; border-bottom: 1px solid var(--ink); font-size: 10px; text-transform: uppercase; }
+.review-board { min-height: 0; padding: clamp(24px, 5vw, 70px); display: grid; place-items: center; }
+.review-result { width: 100%; margin-top: 20px; padding: 14px; border: 3px double var(--ink); display: grid; gap: 7px; }
+.review-result.is-correct { color: var(--paper); background: var(--ink); }
+.review-result span { font-size: 9px; }
+.grade-actions { width: 100%; margin-top: 12px; display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--ink); }
+.grade-actions button { min-height: 64px; display: grid; place-content: center; gap: 5px; border-right: 1px solid var(--ink); font-size: 10px; text-transform: uppercase; }
+.grade-actions button:last-child { border: 0; }
+.grade-actions button:hover, .grade-actions button.is-good { color: var(--paper); background: var(--ink); }
+.grade-actions small { font-size: 8px; }
+.review-complete { height: 100%; display: grid; place-content: center; justify-items: center; gap: 15px; text-align: center; color: var(--ink); background: var(--paper); }
+.review-complete h1 { margin: 0; font: 50px "Iowan Old Style", Georgia, serif; }
+
+@keyframes pulse { 50% { color: var(--ink); background: var(--paper); } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; scroll-behavior: auto !important; } }
+
+/* A perspective board benefits from a wide viewport, not a taller square.
+   Native macOS fullscreen changes the viewport, so no fullscreen API is needed. */
+@media (min-width: 1100px) {
+  .laboratory.has-3d-board { grid-template-columns: minmax(0, 1fr) minmax(305px, 390px); }
+  .board-column.is-3d { --study-width: 1150px; padding: clamp(20px, 2vw, 32px); }
+  .is-3d .board-3d-stage, .is-3d .board-3d-loading {
+    aspect-ratio: auto;
+    height: clamp(360px, calc(100dvh - 360px), 760px);
+  }
+}
+
+@media (max-width: 1050px) {
+  .app-header { grid-template-columns: auto 1fr auto; }
+  .brand { border-left: 1px solid var(--ink); }
+  .music-now { display: none; }
+  .music-modes button { min-width: 56px; }
+  .mobile-index { display: block; padding: 0 15px; font-size: 9px; }
+  .workspace { grid-template-columns: 1fr; }
+  .study-index { position: fixed; left: 0; top: 58px; bottom: 0; width: 250px; transform: translateX(-101%); transition: transform 150ms steps(3, end); }
+  .study-index.is-open { transform: translateX(0); box-shadow: 12px 0 0 var(--ink); }
+  .laboratory { grid-template-columns: minmax(480px, 1fr) 320px; }
+}
+
+@media (max-width: 800px) {
+  .brand span { display: none; }
+  .app-header nav > button { min-width: auto; padding: 0 10px; }
+  .skin-trigger { width: 44px; min-width: 44px; }
+  .skin-panel { width: min(308px, calc(100vw - 14px)); }
+  .music-modes button { min-width: 47px; padding: 0 5px; }
+  .music-volume { width: 68px; padding: 0 8px; }
+  .music-volume input { width: 50px; }
+  .music-volume output { display: none; }
+  .laboratory { display: block; overflow: auto; }
+  .board-column { overflow: visible; }
+  .analysis-panel { border-left: 0; border-top: 1px solid var(--ink); }
+  .vision-review { grid-template-columns: 1fr; }
+  .vision-source, .vision-board, .piece-palette, .fen-metadata, .metadata-warning, .vision-review .dialog-actions { grid-column: 1; }
+  .review-layout { display: block; overflow: auto; }
+  .review-header { height: 58px; }
+  .review-copy { min-height: 500px; border-right: 0; border-bottom: 1px solid var(--ink); }
+  .analysis-path-header { grid-template-columns: 1fr; }
+  .analysis-path-title { min-height: 47px; border-right: 0; border-bottom: 1px solid var(--ink); }
+  .analysis-path-controls button, .analysis-path-controls output { padding: 0 6px; min-height: 38px; }
+}
