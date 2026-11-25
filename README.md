@@ -2,7 +2,7 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-![Position Zero Chess Study Lab concept poster with an oxblood knight on a chessboard](design/position-zero-poster.webp)
+![Position Zero Chess Study Lab poster showing a chessboard and the PZ—0001 training card in a monochrome classroom](design/position-zero-poster.webp)
 
 POSITION ZERO is a local-first chess study app for Apple Silicon Macs. It turns
 games and screenshots into numbered studies with Stockfish analysis, verifiable
